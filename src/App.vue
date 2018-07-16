@@ -1,23 +1,28 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
 
 <script>
+console.log(process.env.NODE_ENV)
 export default {
-  name: 'App'
+  name: 'App' ,
+  methods: {
+    // pwa JS 校验以及引入
+    handlePwa(){
+      if(process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator){
+          navigator.serviceWorker.register('./service-worker.js')
+      }
+    }
+  } ,
+  mounted(){
+    this.handlePwa()
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+
 </style>
