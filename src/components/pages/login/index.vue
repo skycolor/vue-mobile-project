@@ -1,11 +1,11 @@
 <template>
-    <div class="err404_page">
-
+    <div class="login_index_page">
+      login
     </div>
 </template>
 <script>
   export default {
-    name: 'err404_page',
+    name: 'login_index_page',
     data () {
       return {
 
@@ -16,6 +16,8 @@
     }
   }
 </script>
-<style>
+<style lang="scss" >
+  .login_index_page{
 
+  }
 </style>

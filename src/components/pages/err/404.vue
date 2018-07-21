@@ -1,9 +1,11 @@
 <template>
-      <router-view></router-view>
+    <div class="err_404_page">
+      err
+    </div>
 </template>
 <script>
   export default {
-    name: 'baseView',
+    name: 'err_404_page',
     data () {
       return {
 
@@ -14,3 +16,8 @@
     }
   }
 </script>
+<style lang="scss" >
+  .err_404_page{
+
+  }
+</style>
