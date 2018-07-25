@@ -4,8 +4,8 @@ const getters = require('./getters')
 const actions = require('./actions')
 
 module.exports = {
-  state: state ,
+  state ,
   mutations: mutations.default ,
-  getters: getters ,
+  getters ,
   actions: actions.default
 }

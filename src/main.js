@@ -24,9 +24,10 @@ Vue.prototype.addon = utils.addon
 // 加载公共组件
 Vue.use(plugins)
 
+
 // 路由处理
 router.beforeEach((to, from, next) => {
-  utils.addon.handleRouterBeforeEach(to, from, next)
+  utils.addon.handleRouterBeforeEach(to, from, next, store)
 })
 router.afterEach((to, from) => {
   utils.addon.handleRouterAfterEach(to, from)

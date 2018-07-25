@@ -1,6 +1,6 @@
 <template>
     <div class="login_index_page">
-      login
+
     </div>
 </template>
 <script>

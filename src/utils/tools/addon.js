@@ -15,8 +15,8 @@ class Addon {
     }
   }
   // 处理路由的before钩子函数
-  handleRouterBeforeEach (to, from, next) {
-    this.currentAddon.handleRouterBeforeEach(to, from, next)
+  handleRouterBeforeEach (to, from, next, store) {
+    this.currentAddon.handleRouterBeforeEach(to, from, next, store)
   }
   // 处理路由的after钩子函数
   handleRouterAfterEach (to, from) {

@@ -9,6 +9,7 @@ export default new Router({
     // 404界面
     {
       path: '*' ,
+      name: '404' ,
       component: function (resolve, reject) {
         require(['@/components/pages/err/404'], resolve)
       }

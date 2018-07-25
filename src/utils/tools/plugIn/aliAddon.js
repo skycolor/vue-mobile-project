@@ -4,7 +4,7 @@ export default class AliAddon extends ParentAddon {
     super()
   }
   // 处理路由的before钩子函数
-  handleRouterBeforeEach (to, from, next) {
+  handleRouterBeforeEach (to, from, next, store) {
     super.handleRouterBeforeEach(to, from, next)
   }
   // 处理路由的after钩子函数
