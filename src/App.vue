@@ -24,4 +24,16 @@ export default {
 <style lang="scss" >
   @import "../static/css/body.scss";
 
+  html,body,#app{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #app > div{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+
 </style>
