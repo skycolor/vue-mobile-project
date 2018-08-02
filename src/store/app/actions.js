@@ -4,6 +4,6 @@ export default {
     commit(types.UPDATE_LOGIN_STATUS, isLogin)
   } ,
   updatePageInfo : ({commit}, pageInfo) => {
-    commit(types.UPDATE_LOGIN_STATUS, pageInfo)
+    commit(types.UPDATE_PAGE_INFO, pageInfo)
   }
 }

@@ -1,7 +1,7 @@
 <template>
     <div class="login_index_page">
         <!-- 登录表单容器 -->
-        <div class="form_container folding" >
+        <div :class="['form_container' , loading ? 'folding' : '']" >
             <p class="tit" >账号登录</p>
             <div class="input_content" >
               <p>
@@ -18,26 +18,42 @@
               <p class="forget" >忘记密码？</p>
             </div>
         </div>
+        <div v-transfer-dom>
+          <popup :show-mask="false" v-model="loading" height="100%" is-transparent :hide-on-blur="false">
+             <load-dialog></load-dialog>
+          </popup>
+        </div>
     </div>
 </template>
 <script>
-// 参考样式 http://www.17sucai.com/preview/526486/2016-05-11/%E5%B8%A6CSS3%E5%8A%A8%E7%94%BB%E7%89%B9%E6%95%88%E7%9A%84%E6%97%B6%E5%B0%9A%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2UI%E8%AE%BE%E8%AE%A1/index.html#
+  import { TransferDom, Popup } from 'vux'
+  import loadDialog from './components/loadDialog'
   export default {
     name: 'login_index_page',
     data () {
       return {
-        
-      }
-    },
-    methods:{
-      // 登录
-      login(){
-        this.$vux.toast.text('login' , 'bottom')
+        loading : false
       }
     } ,
     components : {
-
-    }
+      Popup , loadDialog
+    } ,
+    directives: {
+      TransferDom
+    } ,
+    methods:{
+      // 登录
+      login(){
+        console.log(this.$router , this.$store);
+        
+        this.loading = true
+        setTimeout(() => {
+          this.$store.dispatch('updateLoginStatus', true)
+          this.loading = false
+          this.$router.push('/home')
+        } , 3000)
+      }
+    } 
   }
 </script>
 <style lang="scss" >
@@ -57,12 +73,13 @@
        border-radius: pt(8);
        color: #fff;
        padding: pt(150) 0 pt(114);
-       transition: all .3s;
+       transition: transform .6s , left .4s .65s;
 
        &.folding{
         box-shadow: 0px pt(20) pt(30) pt(2) rgba(0, 0, 0, 0.55);
         pointer-events: none;
         top: 40%;
+        left: 10%;
         transform: rotateX(70deg) scale(0.9) translate(-55% , 0);
         opacity: .7;
         filter: blur(1px);

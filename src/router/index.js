@@ -43,18 +43,48 @@ export default new Router({
     {
       path: '/home' ,
       name: 'home' ,
-      component: Base ,
+      component: function (resolve, reject) {
+        require(['@/components/pages/home/index'], resolve)
+      } ,
       redirect: to => {
-        return '/home/index'
+        return '/home/tab1'
       } ,
       children: [
         {
-          path: 'index',
-          name: '首页' ,
+          path: 'tab1',
+          name: 'tab1' ,
           component: function (resolve, reject) {
-            require(['@/components/pages/home/index'], resolve)
+            require(['@/components/pages/home/tab/tab1Page'], resolve)
           }
-        }
+        } , 
+        {
+          path: 'tab2',
+          name: 'tab2' ,
+          component: function (resolve, reject) {
+            require(['@/components/pages/home/tab/tab2Page'], resolve)
+          }
+        } ,
+        {
+          path: 'tab3',
+          name: 'tab3' ,
+          component: function (resolve, reject) {
+            require(['@/components/pages/home/tab/tab3Page'], resolve)
+          }
+        } ,
+        {
+          path: 'tab4',
+          name: 'tab4' ,
+          component: function (resolve, reject) {
+            require(['@/components/pages/home/tab/tab4Page'], resolve)
+          }
+        } ,
+        {
+          path: 'tab5',
+          name: 'tab5' ,
+          component: function (resolve, reject) {
+            require(['@/components/pages/home/tab/tab5Page'], resolve)
+          }
+        } 
       ]
     }
   ]

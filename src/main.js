@@ -21,6 +21,7 @@ FastClick.attach(document.body)
 // 加入参数至vue原型链
 Vue.prototype.$moment = moment
 Vue.prototype.$addon = utils.addon
+Vue.prototype.$storage = utils.storage
 
 // 加载公共组件
 Vue.use(router)
