@@ -27,3 +27,15 @@ a{display: block; height: auto; color: #333; text-decoration: none;}
 input[type="submit"],input[type="reset"],input[type="button"],input{-webkit-appearance:none;border-radius:0;}
 img{width: 100%; vertical-align: bottom;}
 img[src=""],img:not([src]){opacity:0;}
+
+
+// 首页路由切换动画
+.fade-enter-active,
+.fade-leave-active {
+  transition: all .4s ease
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}

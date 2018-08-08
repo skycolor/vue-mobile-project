@@ -44,8 +44,6 @@
     methods:{
       // 登录
       login(){
-        console.log(this.$router , this.$store);
-        
         this.loading = true
         setTimeout(() => {
           this.$store.dispatch('updateLoginStatus', true)

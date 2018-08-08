@@ -1,6 +1,8 @@
 <template>
     <div class="home_index_page">
-      <router-view class="main_container" ></router-view>
+      <transition name="fade" mode="out-in">
+        <router-view class="main_container" ></router-view>
+      </transition>
       <home-footer class="footer" ></home-footer>
     </div>
 </template>
@@ -29,7 +31,5 @@
       bottom: pt(112);
       overflow-y: auto;
     }
-
-
   }
 </style>

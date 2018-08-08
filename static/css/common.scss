@@ -1,5 +1,5 @@
-// 将width 16等分，同时设计稿宽度设定为750
-$divisor: 16;
+// 将width 10等分，同时设计稿宽度设定为750
+$divisor: 10;
 $vw_design: 750;
 @function pt($px) {
   @return ( ( $px * $divisor ) / $vw_design ) * 1rem;
