@@ -51,6 +51,12 @@
     mounted(){
       this.mainContent = this.$refs.mainContent
       this.bindEvent()
+      this.$Api.getMusicList({topid : 26}).then(res => {
+        console.log(res);
+        
+      }).catch(err => {
+
+      })
     }
   }
 </script>

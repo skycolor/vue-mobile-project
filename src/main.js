@@ -22,6 +22,7 @@ FastClick.attach(document.body)
 Vue.prototype.$moment = moment
 Vue.prototype.$addon = utils.addon
 Vue.prototype.$storage = utils.storage
+Vue.prototype.$Api = utils.Api
 
 // 加载公共组件
 Vue.use(router)
@@ -39,10 +40,12 @@ router.afterEach((to, from) => {
   utils.addon.handleRouterAfterEach(to, from)
 })
 
-new Vue({
+let app = new Vue({
   el: '#app',
   store ,
   router,
   components: { App },
   template: '<App/>'
 })
+
+global.app = app
