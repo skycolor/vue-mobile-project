@@ -18,6 +18,6 @@
 </script>
 <style lang="scss" >
   .home_tab2_section{
-
+    background: lightcyan;
   }
 </style>

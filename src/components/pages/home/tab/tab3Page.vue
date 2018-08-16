@@ -18,6 +18,6 @@
 </script>
 <style lang="scss" >
   .home_tab3_section{
-
+    background: lavenderblush;
   }
 </style>

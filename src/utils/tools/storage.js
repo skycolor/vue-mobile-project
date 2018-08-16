@@ -1,5 +1,5 @@
 // sessionStorage存储页面信息专属key抬头
-const DBPREFIX = 'hf_app'
+const DBPREFIX = 'hf_app_'
 
 // 方法对象
 class Storage {
@@ -8,8 +8,16 @@ class Storage {
     this.prefix = DBPREFIX
     // 程序内部定义的存储key
     this.staticName = {
-        USER_TOKEN: 'user_token'
+        USER_TOKEN: 'user_token' ,
+        PAGE_COUNT : 'page_count'   //页面数量
     }
+    this.initPageDirection()
+  }
+  // 初始化page direction
+  initPageDirection(){
+    this.storage.clear()
+    this.set(this.staticName.PAGE_COUNT , 0)
+    this.set('/' , 0)
   }
   // 存储  
   set (key, value, fn) {

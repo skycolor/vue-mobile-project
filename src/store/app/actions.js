@@ -5,5 +5,8 @@ export default {
   } ,
   updatePageInfo : ({commit}, pageInfo) => {
     commit(types.UPDATE_PAGE_INFO, pageInfo)
-  }
+  } ,
+  updataDirection : ({commit}, direction) => {
+    commit(types.UPDATE_DIRECTION, direction)
+  } 
 }

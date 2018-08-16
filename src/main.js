@@ -34,7 +34,7 @@ Vue.use(AlertPlugin)
 
 // 路由处理
 router.beforeEach((to, from, next) => {
-  utils.addon.handleRouterBeforeEach(to, from, next, store)
+  utils.addon.handleRouterBeforeEach(to, from, next, store, utils.storage)
 })
 router.afterEach((to, from) => {
   utils.addon.handleRouterAfterEach(to, from)

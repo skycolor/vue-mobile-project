@@ -14,7 +14,12 @@
       return {
 
       }
-    },
+    } ,
+    computed:{
+      direction(){
+        return this.$store.getters.getDirection
+      }
+    } ,
     components : {
       homeFooter
     }

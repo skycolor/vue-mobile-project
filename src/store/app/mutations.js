@@ -6,5 +6,8 @@ export default {
   },
   [types.UPDATE_PAGE_INFO] (state, pageInfo) {
     state.pageInfo = Object.assign({} , state.pageInfo , pageInfo )
+  } ,
+  [types.UPDATE_DIRECTION] (state, direction) {
+    state.direction = direction
   }
 }

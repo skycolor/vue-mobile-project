@@ -86,6 +86,24 @@ export default new Router({
           }
         } 
       ]
-    }
+    } ,
+    // 音乐
+    {
+      path: '/music' ,
+      name: 'music' ,
+      component: Base ,
+      redirect: to => {
+        return '/music/index'
+      } ,
+      children: [
+        {
+          path: 'index',
+          name: '音乐' ,
+          component: function (resolve, reject) {
+            require(['@/components/pages/music/index'], resolve)
+          }
+        }
+      ]
+    } 
   ]
 })

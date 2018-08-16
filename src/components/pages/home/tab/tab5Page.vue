@@ -18,6 +18,6 @@
 </script>
 <style lang="scss" >
   .home_tab5_section{
-
+    background: lightcoral;
   }
 </style>

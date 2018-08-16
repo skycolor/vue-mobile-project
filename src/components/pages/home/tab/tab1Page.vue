@@ -8,7 +8,7 @@
           <div class="text" >搜索商品、品牌</div>
         </div>
         <div class="menu" ></div>
-        <div class="info" >登录</div>
+        <div class="info" @click.stop.prevent="toMusic" >登录</div>
       </div>
       <!-- 增加页面高度 -->
       <div class="block" ></div>
@@ -43,6 +43,10 @@
           this.formStyle = { width : '9.4666666667rem' }
           this.logoStyle = { height : '.8533333333rem' }
         }
+      } ,
+      // 去音乐页面
+      toMusic(){
+        this.$router.push({path : '/music/index'})
       }
     } ,
     beforeDestroy(){
@@ -51,12 +55,6 @@
     mounted(){
       this.mainContent = this.$refs.mainContent
       this.bindEvent()
-      this.$Api.getMusicList({topid : 26}).then(res => {
-        console.log(res);
-        
-      }).catch(err => {
-
-      })
     }
   }
 </script>

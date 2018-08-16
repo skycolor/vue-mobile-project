@@ -18,6 +18,6 @@
 </script>
 <style lang="scss" >
   .home_tab4_section{
-
+    background: lawngreen;
   }
 </style>
