@@ -9,6 +9,19 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
+// eslint 校验
+const createLintingRule = () => ({
+  test: /\.(js|vue)$/,
+  loader: 'eslint-loader',
+  enforce: 'pre',
+  include: [resolve('src')],
+  options: {
+    formatter: require('eslint-friendly-formatter'),
+    emitWarning: !config.dev.showEslintErrorsInOverlay
+  }
+})
+
+
 let webpackConfig  = {
   context: path.resolve(__dirname, '../'),
   entry: {
@@ -30,6 +43,7 @@ let webpackConfig  = {
   },
   module: {
     rules: [
+      ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -38,7 +52,7 @@ let webpackConfig  = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        include: [resolve('src')]
       },
       {
         test: /\.svg$/,

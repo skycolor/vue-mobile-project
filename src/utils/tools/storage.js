@@ -3,34 +3,34 @@ const DBPREFIX = 'hf_app_'
 
 // 方法对象
 class Storage {
-  constructor () {
+  constructor() {
     this.storage = window.sessionStorage
     this.prefix = DBPREFIX
     // 程序内部定义的存储key
     this.staticName = {
-        USER_TOKEN: 'user_token' ,
-        PAGE_COUNT : 'page_count'   //页面数量
+      USER_TOKEN: 'user_token',
+      PAGE_COUNT: 'page_count'   //页面数量
     }
     this.initPageDirection()
   }
   // 初始化page direction
-  initPageDirection(){
+  initPageDirection() {
     this.storage.clear()
-    this.set(this.staticName.PAGE_COUNT , 0)
-    this.set('/' , 0)
+    this.set(this.staticName.PAGE_COUNT, 0)
+    this.set('/', 0)
   }
   // 存储  
-  set (key, value, fn) {
+  set(key, value, fn) {
     try {
       value = JSON.stringify(value)
     } catch (e) {
-
+      console.log(e)
     }
     this.storage.setItem(this.prefix + key, value)
     fn && fn()
   }
   // 获取  
-  get (key, fn) {
+  get(key) {
     if (!key) {
       throw new Error('没有找到key。')
     }
@@ -42,20 +42,20 @@ class Storage {
       try {
         value = JSON.parse(value)
       } catch (e) {
-
+        console.log(e)
       }
     }
     if (value !== null) {
       try {
         value = JSON.parse(value)
       } catch (e) {
-
+        console.log(e)
       }
     }
     return value
   }
   // 移除  
-  remove (key) {
+  remove(key) {
     this.storage.removeItem(this.prefix + key)
   }
 }

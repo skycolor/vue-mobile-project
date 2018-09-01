@@ -1,32 +1,30 @@
 <template>
-    <div class="music_index_page">
-        
-    </div>
+  <div class="music_index_page">
+
+  </div>
 </template>
 <script>
-  export default {
-    name: 'music_index_page',
-    data () {
-      return {
-        
-      }
-    } ,
-    methods:{
-      reqData(){
-        this.$Api.getMusicList({topid : 26}).then(res => {
-            console.log(res)
-        }).catch(err => {
-
+export default {
+  name: "music_index_page",
+  data() {
+    return {}
+  },
+  methods: {
+    reqData() {
+      this.$Api
+        .getMusicList({ topid: 26 })
+        .then((res) => {
+          console.log(res)
         })
-      }
-    } ,
-    mounted(){
-      this.reqData() 
     }
+  },
+  mounted() {
+    this.reqData()
   }
+}
 </script>
 <style lang="scss" >
-  .music_index_page{
-    background: lightgreen;
-  }
+.music_index_page {
+  background: lightgreen;
+}
 </style>

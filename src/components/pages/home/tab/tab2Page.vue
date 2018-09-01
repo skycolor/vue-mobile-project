@@ -1,23 +1,19 @@
 <template>
-    <div class="home_tab2_section">
-      
-    </div>
+  <div class="home_tab2_section">
+
+  </div>
 </template>
 <script>
-  export default {
-    name: 'home_tab2_section',
-    data () {
-      return {
-
-      }
-    },
-    components : {
-
-    }
-  }
+export default {
+  name: "home_tab2_section",
+  data() {
+    return {}
+  },
+  components: {}
+}
 </script>
 <style lang="scss" >
-  .home_tab2_section{
-    background: lightcyan;
-  }
+.home_tab2_section {
+  background: lightcyan;
+}
 </style>

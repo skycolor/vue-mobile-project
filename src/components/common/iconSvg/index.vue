@@ -5,18 +5,18 @@
 </template>
 
 <script>
-  export default {
-    name: 'svg-icon',
-    props: {
-      iconName: {
-        type: String,
-        required: true
-      }
-    },
-    computed: {
-      svgIcon() {
-        return `#icon-${this.iconName}`
-      }
+export default {
+  name: "svg-icon",
+  props: {
+    iconName: {
+      type: String,
+      required: true
+    }
+  },
+  computed: {
+    svgIcon() {
+      return `#icon-${this.iconName}`
     }
   }
+}
 </script>

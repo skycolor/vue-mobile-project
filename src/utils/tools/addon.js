@@ -4,8 +4,8 @@ import wxAddon from './plugIn/wxAddon'
 
 class Addon {
   // 构造函数
-  constructor () {
-    var ua = window.navigator.userAgent.toLowerCase();
+  constructor() {
+    var ua = window.navigator.userAgent.toLowerCase()
     if (ua.match(/MicroMessenger/i) == 'micromessenger') {
       this.currentAddon = new wxAddon()
     } else if (/AlipayClient/.test(window.navigator.userAgent)) {
@@ -15,15 +15,15 @@ class Addon {
     }
   }
   // 处理路由的before钩子函数
-  handleRouterBeforeEach (to, from, next, store, storage) {
+  handleRouterBeforeEach(to, from, next, store, storage) {
     this.currentAddon.handleRouterBeforeEach(to, from, next, store, storage)
   }
   // 处理路由的after钩子函数
-  handleRouterAfterEach (to, from) {
+  handleRouterAfterEach(to, from) {
     this.currentAddon.handleRouterAfterEach(to, from)
   }
   // 页面加载完成
-  pageReady(_this){
+  pageReady(_this) {
     this.currentAddon.pageReady(_this)
   }
   // 绑定分享链接
