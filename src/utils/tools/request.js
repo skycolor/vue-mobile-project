@@ -1,4 +1,4 @@
-import axios from 'axios'
+const axios = global.axios
 
 // 引入配置文件
 const appConfig = require('../config/index')

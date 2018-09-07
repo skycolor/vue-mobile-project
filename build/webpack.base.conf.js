@@ -41,6 +41,11 @@ let webpackConfig  = {
       '@': resolve('src'),
     }
   },
+  // 在全局中引入第三方cdn包
+  externals: {
+    'axios': 'axios' ,
+    'moment': 'moment'
+  },
   module: {
     rules: [
       ...(config.dev.useEslint ? [createLintingRule()] : []),

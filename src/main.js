@@ -12,14 +12,13 @@ import utils from './utils'
 
 // 引入工具包
 import FastClick from 'fastclick'     //快速点击，去除移动端200ms延迟的问题
-import moment from 'moment'     //时间处理
 import { ToastPlugin, LoadingPlugin, ConfirmPlugin, AlertPlugin } from 'vux'  //vux组件中的弹出框和进度条
 
 // 使用快速点击插件
 FastClick.attach(document.body)
 
 // 加入参数至vue原型链
-Vue.prototype.$moment = moment
+Vue.prototype.$moment = global.moment
 Vue.prototype.$addon = utils.addon
 Vue.prototype.$storage = utils.storage
 Vue.prototype.$Api = utils.Api
